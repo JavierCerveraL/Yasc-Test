@@ -31,17 +31,17 @@ function Post() {
 
         <div className=" flex  justify-between items-center   bg-[#50506A]  text-[#E6E6FD]  ">
           <div className="inputIcons  ">
-            <BsHandThumbsUp className="h-4" />
+            <BsHandThumbsUp className="h-4 hvr-icon" />
             <p className="text-xs sm:text-base">Like</p>
           </div>
 
           <div className="inputIcons">
-            <BiCommentDetail className="h-4" />
+            <BiCommentDetail className="h-4 hvr-icon" />
             <p className="text-xs sm:text-base">Comment</p>
           </div>
 
           <div className="inputIcons">
-            <BsShare className="h-4" />
+            <BsShare className="h-4 hvr-icon" />
             <p className="text-xs sm:text-base">Share</p>
           </div>
         </div>

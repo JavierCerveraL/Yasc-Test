@@ -24,7 +24,7 @@ const RedirectButton = () => {
           onSubmit={onFormSubmit}
           type="submit"
           onClick={handleClick}
-          class="mt-4 bg-[#5944DF] text-[#E6E6FD] py-2 px-12 shadow rounded-lg hvr-grow hover:bg-[#1E0DEA] "
+          class="mt-4 bg-[#5944DF] text-[#E6E6FD] py-2 px-12 shadow rounded-lg hvr-grow-shadow hover:bg-[#1E0DEA] "
         >
           Login
         </button>

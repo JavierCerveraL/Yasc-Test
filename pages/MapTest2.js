@@ -20,7 +20,7 @@ function MapTest2() {
       {data &&
         data.map((data) => {
           return (
-            <div id="map-container">
+            <div id="map-container" key={data.id}>
               <GoogleMap>
                 {locations.map((location) => (
                   <div

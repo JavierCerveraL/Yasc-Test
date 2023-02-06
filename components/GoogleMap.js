@@ -1,14 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import useSWR from 'swr';
-
-const fetcher = (url) => fetch(url).then((res) => res.json());
+import React, { useEffect, useState } from 'react';
 
 const Map = () => {
   const [map, setMap] = useState(null);
-  const { data, error } = useSWR('/api/staticdata', fetcher);
 
   useEffect(() => {
-    if (!map && !error) {
+    if (!map) {
       const googleMapScript = document.createElement('script');
       googleMapScript.src =
         'https://maps.googleapis.com/maps/api/js?key=AIzaSyAxRAX4AgykGyHa7esDBUakrQXkgpvrS0Y';
@@ -26,25 +22,13 @@ const Map = () => {
         setMap(googleMap);
       });
     }
-
-    if (map && data && Array.isArray(data)) {
-      data.forEach((location) => {
-        const marker = new window.google.maps.Marker({
-          position: {
-            latitude: location.latitude,
-            longitude: location.longitude,
-          },
-          map: map,
-        });
-      });
-    }
-  }, [map, data, error]);
+  }, [map]);
 
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
-      <div id="map" style={{ width: '100%', height: '100%' }} />
-      <div></div>
-      {error && <p>Error: {error.message}</p>}
+      <div id="map" style={{ width: '100%', height: '100%' }}>
+        <div className=" z-50"></div>
+      </div>
     </div>
   );
 };

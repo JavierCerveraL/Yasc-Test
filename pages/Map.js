@@ -6,7 +6,7 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 const Map = () => {
   const [map, setMap] = useState(null);
   const { data, error } = useSWR('/api/staticdata', fetcher);
-
+  console.log(data);
   useEffect(() => {
     if (!map && !error) {
       const googleMapScript = document.createElement('script');
@@ -39,7 +39,7 @@ const Map = () => {
       });
     }
   }, [map, data, error]);
-
+  console.log(data);
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
       <div id="map" style={{ width: '100%', height: '100%' }} />
